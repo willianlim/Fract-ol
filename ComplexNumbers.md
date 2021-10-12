@@ -29,11 +29,13 @@
 
 ## Definition1
 
-sadfssadfs
+$
+x \in A
+$
 
-## Imaginary Unit
-
-sdfsdf
+$$
+y = \beta
+$$
 
 
 
@@ -46,3 +48,7 @@ sdfsdf
 [Complex Numbers - Vídeo Lessons(Paulo Pereira)](https://www.youtube.com/watch?v=7E7mypyLyoM&list=PLEfwqyY2ox853NZdP0oJNXlnjmHOgDSFK&index=1)
 
 [Complex Number Set Diagram](https://thinkzone.wlonk.com/Numbers/NumberSets.htm)
+
+[Mathematics in R Markdown](#https://rpruim.github.io/s341/S19/from-class/MathinRmd.html)
+
+[Easiest way of writing mathematical equation in R Markdown](#https://www.youtube.com/watch?v=4I3PCDME5U8)
