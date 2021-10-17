@@ -29,13 +29,7 @@
 
 ## Definition1
 
-$
-x \in A
-$
 
-$$
-y = \beta
-$$
 
 
 
@@ -52,3 +46,5 @@ $$
 [Mathematics in R Markdown](#https://rpruim.github.io/s341/S19/from-class/MathinRmd.html)
 
 [Easiest way of writing mathematical equation in R Markdown](#https://www.youtube.com/watch?v=4I3PCDME5U8)
+
+[fract notion](#https://bejewled-quilt-b26.notion.site/Fractol-880fd85a81364edd88a75ffa7726b84f)
