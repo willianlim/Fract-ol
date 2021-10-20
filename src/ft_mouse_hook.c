@@ -56,7 +56,7 @@ void	death_star(t_data *data)
 	mlx_destroy_window(data->mlx->mlx_ptr, data->mlx->win);
 	mlx_destroy_display(data->mlx->mlx_ptr);
 	free(data->mlx);
-	free(data->img.data);
+	free(data->mlx->mlx_ptr);
 	free(data);
 	exit(0);
 }

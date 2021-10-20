@@ -24,6 +24,7 @@ $(NAME): $(OBJECTS)
 	cp $(LIB_PATH)/$(LIBFT) $(LIB)/$(NAME)
 	ar rcs $(LIB)/$(NAME) $(OBJECTS)
 	gcc ./apps/ft_main.c ./lib/libfractol.a ./minilibx/libmlx.a -L. -lXext -L. -lX11 -lm -o ./bin/ft_main
+#	-fsanitize
 #	./bin/ft_main
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
