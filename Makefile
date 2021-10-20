@@ -23,7 +23,7 @@ $(NAME): $(OBJECTS)
 	$(MAKE) -C $(MI_PATH)
 	cp $(LIB_PATH)/$(LIBFT) $(LIB)/$(NAME)
 	ar rcs $(LIB)/$(NAME) $(OBJECTS)
-	gcc ./apps/ft_main.c ./lib/libfractol.a ./minilibx/libmlx.a -L. -lXext -L. -lX11 -lm -o ./bin/ft_main
+	gcc ./apps/ft_main.c ./lib/libfractol.a ./minilibx/libmlx.a -L. -lXext -L. -lX11 -lm -o ./bin/fractol
 #	-fsanitize
 #	./bin/ft_main
 
