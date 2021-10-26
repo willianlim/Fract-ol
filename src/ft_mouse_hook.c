@@ -34,14 +34,12 @@ int	ft_mouse_hook(int key, int x, int y, t_data *data)
 	if (key == 4)
 	{
 		zoom(key, x, y, data);
-		//data->point.n -= 0.1;
 		ft_mandelbrot(data);
 		mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, data->img.img_ptr, 0, 0);
 	}
 	if (key == 5)
 	{
 		zoom(key, x, y, data);
-		//data->point.n += 0.1;
 		ft_mandelbrot(data);
 		mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, data->img.img_ptr, 0, 0);
 	}
@@ -57,7 +55,6 @@ void	death_star(t_data *data)
 	mlx_destroy_display(data->mlx->mlx_ptr);
 	free(data->mlx);
 	free(data->mlx->mlx_ptr);
-	free(data);
 	exit(0);
 }
 

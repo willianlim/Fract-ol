@@ -13,9 +13,10 @@
 # define IMG_WIDTH 500
 # define IMG_HEIGHT 500
 
-# define MAX_ITERATION 30
+# define MAX_ITERATION 300
 
 # define MANDELBROT "mandelbrot"
+# define JULIA "julia"
 
 typedef struct s_img
 {

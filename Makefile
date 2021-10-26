@@ -12,7 +12,8 @@ LIBFT = libft.a
 REMOVE = rm -rf
 MLX_FLAGS = -L. -lXext -L. -lX11
 
-SRC_FILE = ft_picture.c ft_map.c ft_mandelbrot.c ft_cal_loop.c ft_mouse_hook.c
+SRC_FILE += ft_picture.c ft_map.c ft_mandelbrot.c ft_cal_loop.c ft_mouse_hook.c
+SRC_FILE += ft_color.c ft_julia.c
 OBJFILE = $(SRC_FILE:.c=.o)
 OBJECTS = $(addprefix $(OBJDIR)/, $(OBJFILE))
 
@@ -24,8 +25,8 @@ $(NAME): $(OBJECTS)
 	cp $(LIB_PATH)/$(LIBFT) $(LIB)/$(NAME)
 	ar rcs $(LIB)/$(NAME) $(OBJECTS)
 	gcc ./apps/ft_main.c ./lib/libfractol.a ./minilibx/libmlx.a -L. -lXext -L. -lX11 -lm -o ./bin/fractol
-#	-fsanitize
-#	./bin/ft_main
+#	-fsanitize=address
+#	./bin/fractol
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(LIB) $(OBJDIR) $(BINDIR)

@@ -1,6 +1,6 @@
 #include "../include/ft_fractol.h"
 
-void	ft_mandelbrot(t_data *data)
+void	ft_julia(t_data *data)
 {
 	unsigned int	*rgb;
 
