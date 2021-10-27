@@ -1,24 +1,13 @@
 #include "../include/ft_fractol.h"
 
-void	init(t_data *data)
-{
-	data->point.xmx = 2;
-	data->point.xmn = -2;
-	data->point.ymx = 2;
-	data->point.ymn = -2;
-}
-
 int main(int argc, const char *argv[])
 {
 	t_data	data;
 
-	data.mlx = malloc(sizeof(t_mlx) * 1);
-	init(&data);
-	data.mlx->mlx_ptr = mlx_init();
-	data.mlx->win = mlx_new_window(data.mlx->mlx_ptr, WIN_WIDTH, WIN_HEIGHT, "fractol");
-	data.img.img_ptr = mlx_new_image(data.mlx->mlx_ptr, IMG_WIDTH, IMG_HEIGHT);
-	data.img.data = (int *)mlx_get_data_addr(data.img.img_ptr, &data.img.bpp, &data.img.size_l, &data.img.endian);
-	ft_picture(&data, &argv[1]);
+	if (argc != 2 || ft_parameters(argv))
+		ft_display_usage();
+	data.mlx = (struct s_mlx*)malloc(sizeof(struct s_mlx));
+	init(&data, argv);
 	mlx_put_image_to_window(data.mlx->mlx_ptr, data.mlx->win, data.img.img_ptr, 0, 0);
 	mlx_mouse_hook(data.mlx->win, ft_mouse_hook, &data);
 	mlx_key_hook(data.mlx->win, ft_key_hook, &data);

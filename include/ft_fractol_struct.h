@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <fcntl.h>
 #include "../minilibx/mlx.h"
 #include "../libft/libft.h"
 
@@ -14,6 +15,8 @@
 # define IMG_HEIGHT 500
 
 # define MAX_ITERATION 300
+
+# define ERROR "./mensage/error.txt"
 
 # define MANDELBROT "mandelbrot"
 # define JULIA "julia"

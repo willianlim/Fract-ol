@@ -6,7 +6,7 @@ SOURCES			+=	ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c
 SOURCES			+=	ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c
 SOURCES			+=	ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c
 SOURCES			+=	ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c
-SOURCES			+=	ft_tolower.c ft_toupper.c
+SOURCES			+=	ft_tolower.c ft_toupper.c ft_strcmp.c get_next_line.c
 
 SOURCES_BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
 SOURCES_BONUS	+=	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c
@@ -18,7 +18,7 @@ OBJECTS_BONUS	= 	$(SOURCES_BONUS:.c=.o)
 
 NAME			=	libft.a
 
-CC				=	clang
+CC				=	gcc
 AR				=	ar
 RM				=	rm -f
 

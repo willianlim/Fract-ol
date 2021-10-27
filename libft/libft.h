@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 11:50:46 by user              #+#    #+#             */
-/*   Updated: 2021/08/07 17:30:01 by user             ###   ########.fr       */
+/*   Updated: 2021/10/27 00:16:24 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "get_next_line.h"
 
 typedef struct s_list
 {
@@ -482,5 +483,20 @@ char	**ft_split(char const *s, char c);
  * allocate fails.
  */
 char	*ft_itoa(int n);
+
+/**
+ * @brief The strcmp function compares the string pointed to by s1 to the
+ * string pointed to by s2. If two strings are the same then strcmp() returns
+ * 0, otherwise, it returns a non-zero value.
+ *
+ * @param s1 pointer to the string1.
+ * @param s2 pointer to the string2.
+ * @return int Return value < 0: then it indicates s1 is less than s2.
+ * Return value > 0: then it indicates s2 is less than s1.
+ * Return value == 0: then it indicates s1 is equal to s2.
+ */
+int		ft_strcmp(const char *s1, const char *s2);
+
+char	*get_next_line(int fd);
 
 #endif
