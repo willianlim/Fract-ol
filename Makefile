@@ -13,7 +13,7 @@ REMOVE = rm -rf
 MLX_FLAGS = -L. -lXext -L. -lX11
 
 SRC_FILE += ft_map.c ft_mandelbrot.c ft_cal_loop.c ft_mouse_hook.c
-SRC_FILE += ft_color.c ft_julia.c ft_display_usage.c ft_init.c
+SRC_FILE += ft_color.c ft_display_usage.c ft_init.c
 OBJFILE = $(SRC_FILE:.c=.o)
 OBJECTS = $(addprefix $(OBJDIR)/, $(OBJFILE))
 

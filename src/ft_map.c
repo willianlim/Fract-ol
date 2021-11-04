@@ -11,7 +11,9 @@ void	ft_map(t_data *data)
 	s_y = (double)(p->ymx - p->ymn) / WIN_HEIGHT;
 	data->complex.c_re = p->xmn + (double)(data->point.row * s_x);
 	data->complex.c_img = p->ymn + (double)(data->point.col * s_y);
-	data->point.x = 0;
-	data->point.y = 0;
+	data->point.zr = 0;
+	data->point.zi = 0;
+	data->point.zr2 = 0;
+	data->point.zi2 = 0;
 	data->point.i = 0;
 }

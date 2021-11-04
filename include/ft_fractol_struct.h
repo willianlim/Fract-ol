@@ -8,15 +8,15 @@
 #include "../minilibx/mlx.h"
 #include "../libft/libft.h"
 
-# define WIN_WIDTH 500
-# define WIN_HEIGHT 500
+# define WIN_WIDTH 800
+# define WIN_HEIGHT 800
 
-# define IMG_WIDTH 500
-# define IMG_HEIGHT 500
+# define IMG_WIDTH 800
+# define IMG_HEIGHT 800
 
-# define MAX_ITERATION 300
+# define MAX_ITERATION 600
 
-# define ERROR "./mensage/error.txt"
+# define ERROR "./menssage/error.txt"
 
 # define MANDELBROT "mandelbrot"
 # define JULIA "julia"
@@ -44,10 +44,12 @@ typedef struct s_complex
 
 typedef struct s_point
 {
-	double	x_new;
-	double	x;
-	double	y;
-	double	i;
+	double	tmp;
+	double	zi;
+	double	zr;
+	double	zi2;
+	double	zr2;
+	int	i;
 	int		row;
 	int		col;
 	int		max;
