@@ -12,6 +12,11 @@ int	ft_display_usage(void)
 	while(s != NULL)
 	{
 		s = get_next_line(fd);
+		if (s == NULL)
+		{
+			free(s);
+				break ;
+		}
 		printf("%s", s);
 		free(s);
 	}

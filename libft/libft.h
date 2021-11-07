@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 11:50:46 by user              #+#    #+#             */
-/*   Updated: 2021/10/27 00:16:24 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/06 01:46:39 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "get_next_line.h"
+# include <stdio.h>
 
 typedef struct s_list
 {

@@ -12,8 +12,8 @@ LIBFT = libft.a
 REMOVE = rm -rf
 MLX_FLAGS = -L. -lXext -L. -lX11
 
-SRC_FILE += ft_map.c ft_mandelbrot.c ft_cal_loop.c ft_mouse_hook.c
-SRC_FILE += ft_color.c ft_display_usage.c ft_init.c
+SRC_FILE +=  ft_mandelbrot.c ft_mouse_hook.c
+SRC_FILE += ft_color.c ft_display_usage.c ft_init.c ft_julia.c
 OBJFILE = $(SRC_FILE:.c=.o)
 OBJECTS = $(addprefix $(OBJDIR)/, $(OBJFILE))
 
@@ -27,16 +27,15 @@ $(NAME): $(OBJECTS)
 #	./bin/fractol
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@mkdir -p $(LIB) $(OBJDIR) $(BINDIR)
+	@mkdir -p $(OBJDIR) $(BINDIR)
 	$(CC) -g -c $< -I $(INCLUDE) -o $@
 
 clean:
-	$(REMOVE) $(OBJDIR)
-	$(REMOVE) $(BINDIR)
 	$(MAKE) clean -C $(LIB_PATH)
 	$(MAKE) clean -C $(MI_PATH)
 
 fclean: clean
-	$(REMOVE) $(LIB)
+	$(REMOVE) $(OBJDIR)
+	$(REMOVE) $(BINDIR)
 
 re: fclean all

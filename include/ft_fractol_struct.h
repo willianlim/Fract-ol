@@ -17,6 +17,7 @@
 # define MAX_ITERATION 600
 
 # define ERROR "./menssage/error.txt"
+# define COLOR "./menssage/colors.txt"
 
 # define MANDELBROT "mandelbrot"
 # define JULIA "julia"
@@ -49,7 +50,7 @@ typedef struct s_point
 	double	zr;
 	double	zi2;
 	double	zr2;
-	int	i;
+	int		i;
 	int		row;
 	int		col;
 	int		max;
@@ -65,8 +66,7 @@ typedef struct s_data
 	t_img		img;
 	t_complex	complex;
 	t_point		point;
+	int			c[48];
 }t_data;
-
-
 
 # endif

@@ -26,7 +26,6 @@ void	zoom(int key, int x, int y, t_data *data)
 	data->point.xmx = data->point.xmx + (d_re * (1 - xrat));
 	data->point.ymn = data->point.ymn - (d_img * yrat);
 	data->point.ymx = data->point.ymx + (d_img * (1 - yrat));
-
 }
 
 int	ft_mouse_hook(int key, int x, int y, t_data *data)
