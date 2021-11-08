@@ -28,21 +28,30 @@ void	zoom(int key, int x, int y, t_data *data)
 	data->point.ymx = data->point.ymx + (d_img * (1 - yrat));
 }
 
+void	chek_frac(t_data *data)
+{
+	if (data->j == 0)
+		ft_mandelbrot(data);
+	else if (data->j == 1)
+		ft_julia(data);
+	else if (data->j == 2)
+		ft_burningship(data);
+}
+
 int	ft_mouse_hook(int key, int x, int y, t_data *data)
 {
 	if (key == 4)
 	{
 		zoom(key, x, y, data);
-		ft_mandelbrot(data);
+		chek_frac(data);
 		mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, data->img.img_ptr, 0, 0);
 	}
 	if (key == 5)
 	{
 		zoom(key, x, y, data);
-		ft_mandelbrot(data);
+		chek_frac(data);
 		mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, data->img.img_ptr, 0, 0);
 	}
-	printf("key: %d\n x: %d\n y: %d\n", key, x, y);
 	return(0);
 }
 
@@ -52,14 +61,36 @@ void	death_star(t_data *data)
 	mlx_clear_window(data->mlx->mlx_ptr, data->mlx->win);
 	mlx_destroy_window(data->mlx->mlx_ptr, data->mlx->win);
 	mlx_destroy_display(data->mlx->mlx_ptr);
-	free(data->mlx);
 	free(data->mlx->mlx_ptr);
+	free(data->mlx);
 	exit(0);
 }
+
+static	void	define_color(t_data *data)
+{
+	data->k = (data->k + 1) % 6;
+	chek_frac(data);
+	mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, data->img.img_ptr, 0, 0);
+}
+
+// void	move_up(t_data *data)
+// {
+// 	data->point.ymn += 0.02 * (data->point.ymx - data->point.ymn);
+// 	data->point.ymx += 0.02 * (data->point.ymx - data->point.ymn);
+// 	ft_mandelbrot(data);
+// 	mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, data->img.img_ptr, 0, 0);
+// 	int i = 0;
+// 	scanf("%d", &i);
+// 	printf("%d\n", i);
+// }
 
 int	ft_key_hook(int key, t_data *data)
 {
 	if (key == 65307)
 		death_star(data);
+	if (key == 99)
+		define_color(data);
+	// if (key);
+	// 	move_up(data);
 	return (0);
 }

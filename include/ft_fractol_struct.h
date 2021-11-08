@@ -17,10 +17,12 @@
 # define MAX_ITERATION 600
 
 # define ERROR "./menssage/error.txt"
-# define COLOR "./menssage/colors.txt"
+# define COLOR1 "./menssage/colors1.txt"
+# define COLOR2 "./menssage/colors2.txt"
 
 # define MANDELBROT "mandelbrot"
 # define JULIA "julia"
+# define BURNINGSHIP "burning-ship"
 
 typedef struct s_img
 {
@@ -67,6 +69,10 @@ typedef struct s_data
 	t_complex	complex;
 	t_point		point;
 	int			c[48];
+	int			j;
+	double		jul_r;
+	double		jul_i;
+	int			k;
 }t_data;
 
 # endif

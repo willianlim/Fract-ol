@@ -30,5 +30,7 @@ int	ft_parameters(const char *argv[])
 		return (0);
 	else if (!ft_strcmp(argv[1], MANDELBROT))
 		return (0);
+	else if (!ft_strcmp(argv[1], BURNINGSHIP))
+		return (0);
 	return (1);
 }

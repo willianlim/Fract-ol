@@ -12,7 +12,7 @@ LIBFT = libft.a
 REMOVE = rm -rf
 MLX_FLAGS = -L. -lXext -L. -lX11
 
-SRC_FILE +=  ft_mandelbrot.c ft_mouse_hook.c
+SRC_FILE +=  ft_mandelbrot.c ft_mouse_hook.c ft_burningship.c
 SRC_FILE += ft_color.c ft_display_usage.c ft_init.c ft_julia.c
 OBJFILE = $(SRC_FILE:.c=.o)
 OBJECTS = $(addprefix $(OBJDIR)/, $(OBJFILE))
