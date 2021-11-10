@@ -46,7 +46,7 @@
         |   ./bin/fractol <fractal name> [constant complex number]   |.
         |                                                            |.
         |      Fractal name: (case sensitive)                        |.
-        |   mandelbrot, julia, burning-ship.                          |.
+        |   mandelbrot, julia, burning-ship.                         |.
         |                                                            |.
         |   -> Second Topic (2):                                     |.
         |      The constant complex number is only used in the       |.

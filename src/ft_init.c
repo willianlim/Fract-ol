@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:56:03 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/09 20:56:48 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/10 15:24:46 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_create_image(t_data *data)
 	&data->img.bpp, &data->img.size_l, &data->img.endian);
 }
 
-void	ft_picture(int argc, const char *argv[], t_data *data)
+void	ft_picture(const char *argv[], t_data *data)
 {
 	data->k = 1;
 	if (!ft_strcmp(argv[1], MANDELBROT))
@@ -46,7 +46,7 @@ void	ft_picture(int argc, const char *argv[], t_data *data)
 	else if (!ft_strcmp(argv[1], JULIA))
 	{
 		data->j = 1;
-		ft_parameter_julia(argc, argv, data);
+		ft_parameter_julia(argv, data);
 		ft_julia(data);
 	}
 	else if (!ft_strcmp(argv[1], BURNINGSHIP))
@@ -56,11 +56,11 @@ void	ft_picture(int argc, const char *argv[], t_data *data)
 	}
 }
 
-void	init(int argc, const char *argv[], t_data *data)
+void	init(const char *argv[], t_data *data)
 {
 	ft_set_pointer(data);
 	ft_create_window(data);
 	ft_create_image(data);
 	c_vect(data);
-	ft_picture(argc, argv, data);
+	ft_picture(argv, data);
 }

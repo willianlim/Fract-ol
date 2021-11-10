@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 21:10:31 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/10 02:33:01 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/10 15:45:02 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ double	stof(const char *s)
 
 int	point_img(int a, const char **ptr, t_jul *jul, t_data *data)
 {
-	while (*(*(ptr + a) + jul->i) >= 48 && \
-	*(*(ptr + a) + jul->i) <= 57 || *(*(ptr + a) + jul->i) == 46)
+	while ((*(*(ptr + a) + jul->i) >= 48 \
+	&& *(*(ptr + a) + jul->i) <= 57) || *(*(ptr + a) + jul->i) == 46)
 	{
 		if (*(*(ptr + a) + jul->i) == 46)
 		{
@@ -62,6 +62,7 @@ int	point_img(int a, const char **ptr, t_jul *jul, t_data *data)
 	}
 	else
 		ft_display_usage(8, data);
+	return (0);
 }
 
 void	plus_minus_digit(int a, const char	**ptr, t_jul *jul, t_data *data)
@@ -101,9 +102,10 @@ static int	verify_argv(int a, const char *argv[], t_data *data)
 	jul.w = 0;
 	plus_minus_digit(a, argv, &jul, data);
 	point_img(a, argv, &jul, data);
+	return (0);
 }
 
-void	ft_parameter_julia(int argc, const char *argv[], t_data *data)
+void	ft_parameter_julia(const char *argv[], t_data *data)
 {
 	if (argv[2] == NULL || argv[3] == NULL)
 		ft_display_usage(2, data);
@@ -113,12 +115,12 @@ void	ft_parameter_julia(int argc, const char *argv[], t_data *data)
 		data->jul.jul_r = stof(argv[2]);
 	}
 	else
-		ft_display_usage(10, data);
+		ft_display_usage(9, data);
 	if (ft_strchr(argv[3], 'i'))
 	{
 		verify_argv(3, argv, data);
 		data->jul.jul_i = stof(argv[3]);
 	}
 	else
-		ft_display_usage(9, data);
+		ft_display_usage(10, data);
 }

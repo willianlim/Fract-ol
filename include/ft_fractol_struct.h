@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:27:14 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/09 23:09:10 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/10 15:48:37 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 
 # define MAX_ITERATION 600
 
+# define COLOR1 "./menssage/colors1.txt"
 # define ERROR1 "./menssage/error1.txt"
 # define ERROR2 "./menssage/error2.txt"
 # define ERROR3 "./menssage/error3.txt"
@@ -38,8 +39,6 @@
 # define ERROR8 "./menssage/error8.txt"
 # define ERROR9 "./menssage/error9.txt"
 # define ERROR10 "./menssage/error10.txt"
-# define COLOR1 "./menssage/colors1.txt"
-# define COLOR2 "./menssage/colors2.txt"
 
 # define MANDELBROT "mandelbrot"
 # define JULIA "julia"

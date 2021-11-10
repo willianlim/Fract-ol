@@ -6,13 +6,13 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:54:43 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/10 02:01:13 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/10 15:56:24 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_fractol.h"
 
-int	ft_option(int t)
+static int	ft_option(int t)
 {
 	if (t == 1)
 		return (open(ERROR1, O_RDONLY));
@@ -34,6 +34,7 @@ int	ft_option(int t)
 		return (open(ERROR9, O_RDONLY));
 	if (t == 10)
 		return (open(ERROR10, O_RDONLY));
+	return (0);
 }
 
 int	ft_display_usage(int t, t_data *data)
@@ -56,7 +57,8 @@ int	ft_display_usage(int t, t_data *data)
 		printf("%s", s);
 		free(s);
 	}
-	death_star(data);
+	if (t > 1 && t <= 10)
+		death_star(data);
 	close(fd);
 	exit(0);
 }

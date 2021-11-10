@@ -6,8 +6,8 @@ a8P_____88 88P'   "Y8 88P'   "Y8 a8"     "8a 88P'   "Y8      44  44
  `"Ybbd8"' 88         88          `"YbbdP"'  88                  44
                    ___________________________________________
                  /                                             \
-                |    At least one symbol ± is required and real |
-                |                                               |
+                |    At least one symbol ± is required for real |
+                |  and imaginary part.                          |
                 |                                               |
                  \ __      ___________________________________ /
                      \    /
