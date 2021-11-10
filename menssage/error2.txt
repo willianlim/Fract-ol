@@ -8,7 +8,7 @@ a8P_____88 88P'   "Y8 88P'   "Y8 a8"     "8a 88P'   "Y8     22  22
                  /   The real and imaginary part is mandatory  \
                 |  like the following example:                  |
                 |                                               |
-                |  ./bin/fractol julia ±0.285 ±0.0i             |
+                |  ./fractol julia ±0.285 ±0.0i             |
                 |  Real: ±0.28                                  |
                 |  Imaginary: ±0.0i                             |
                  \ __      ___________________________________ /

@@ -43,7 +43,7 @@
         |                                                            |.
         |   -> First Topic (1):                                      |.
         |      Fract-ol usage:                                       |.
-        |   ./bin/fractol <fractal name> [constant complex number]   |.
+        |   ./fractol <fractal name> [constant complex number]   |.
         |                                                            |.
         |      Fractal name: (case sensitive)                        |.
         |   mandelbrot, julia, burning-ship.                         |.
@@ -54,15 +54,15 @@
         |                                                            |.
         |      Examples:                                             |.
         |                                                            |.
-        |   ./bin/fractol julia +0.285 +0.0i                         |.
-        |   ./bin/fractol julia +0.285 +0.01i                        |.
-        |   ./bin/fractol julia +0.45 +0.1428i                       |.
-        |   ./bin/fractol julia -0.70176 -0.38421i                   |.
-        |   ./bin/fractol julia +0.285 +0.01i                        |.
-        |   ./bin/fractol julia -0.835 -0.2321i                      |.
-        |   ./bin/fractol julia -0.8 -0.156i                         |.
-        |   ./bin/fractol julia -0.7269 +0.1889i                     |.
-        |   ./bin/fractol julia +0.0 -0.8i                           |.
+        |   ./fractol julia +0.285 +0.0i                         |.
+        |   ./fractol julia +0.285 +0.01i                        |.
+        |   ./fractol julia +0.45 +0.1428i                       |.
+        |   ./fractol julia -0.70176 -0.38421i                   |.
+        |   ./fractol julia +0.285 +0.01i                        |.
+        |   ./fractol julia -0.835 -0.2321i                      |.
+        |   ./fractol julia -0.8 -0.156i                         |.
+        |   ./fractol julia -0.7269 +0.1889i                     |.
+        |   ./fractol julia +0.0 -0.8i                           |.
         |                                                            |.
         |   -> Third Topic (3):                                      |.
         |      The mouse wheel zooms in and out, almost infinitely   |.
