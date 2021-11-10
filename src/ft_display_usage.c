@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:54:43 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/09 23:08:55 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/10 02:01:13 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_option(int t)
 		return (open(ERROR10, O_RDONLY));
 }
 
-int	ft_display_usage(int t)
+int	ft_display_usage(int t, t_data *data)
 {
 	int		fd;
 	char	*s;
@@ -56,8 +56,9 @@ int	ft_display_usage(int t)
 		printf("%s", s);
 		free(s);
 	}
+	death_star(data);
 	close(fd);
-	exit(1);
+	exit(0);
 }
 
 int	ft_name_fractol(const char *argv[])

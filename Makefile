@@ -1,6 +1,6 @@
 NAME = libfractol.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -c
+CFLAGS = -Wall -Wextra -Werror -c -g3
 LIB_PATH = ./libft
 MI_PATH = ./minilibx
 OBJDIR = ./obj

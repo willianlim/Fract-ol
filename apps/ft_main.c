@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 21:20:47 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/09 22:25:22 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/10 01:47:01 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, const char *argv[])
 	t_data	data;
 
 	if (argc < 2 || !ft_name_fractol(argv))
-		ft_display_usage(1);
+		ft_display_usage(1, &data);
 	data.mlx = (struct s_mlx *)malloc(sizeof(struct s_mlx));
 	init(argc, argv, &data);
 	mlx_put_image_to_window(data.mlx->mlx_ptr, \
