@@ -1,0 +1,82 @@
+
+      ad88                                                      88
+      d8"                                      ,d               88
+      88                                       88               88
+    MM88MMM 8b,dPPYba, ,adPPYYba,  ,adPPYba, MM88MMM ,adPPYYba, 88
+      88    88P'   "Y8 ""     `Y8 a8"     ""   88    ""     `Y8 88
+      88    88         ,adPPPPP88 8b           88    ,adPPPPP88 88
+      88    88         88,    ,88 "8a,   ,aa   88,   88,    ,88 88
+      88    88         `"8bbdP"Y8  `"Ybbd8"'   "Y888 `"8bbdP"Y8 88
+
+                         __________________________________________
+                       /                                             \
+                      |      HELLO, HUMAN CODER ! !                   |
+                      |                          U                    |
+                      |                                               |
+                       \ __      ___________________________________ /
+                           \    /
+                           \  /
+                           \/
+        _..._
+      .'     '.      _
+     /    .-""-\   _/ \
+   .-|   /:.   |  |   |
+   |  \  |:.   /.-'-./
+   | .-'-;:__.'    =/
+   .'=  *=| 42  _.='
+  /   _.  |    ;
+ ;-.-'|    \   |
+/   | \    _\  _\
+\__/'._;.  ==' ==\
+         \    \   |
+         /    /   /
+         /-._/-._/
+         \   `\  \
+          `-._/._/
+
+
+      _____________________________________________________________
+    /  \                                                            \.
+   |    |    Earthman, I come from very far away to bring you a      |.
+    \_ /| menssage on how to compile and use this amazing program:   |.
+        |                                                            |.
+        |                                                            |.
+        |   -> First Topic (1):                                      |.
+        |      Fract-ol usage:                                       |.
+        |   ./bin/fractol <fractal name> [constant complex number]   |.
+        |                                                            |.
+        |      Fractal name: (case sensitive)                        |.
+        |   mandelbrot, julia, burning-ship.                          |.
+        |                                                            |.
+        |   -> Second Topic (2):                                     |.
+        |      The constant complex number is only used in the       |.
+        |   julia set.                                               |.
+        |                                                            |.
+        |      Examples:                                             |.
+        |                                                            |.
+        |   ./bin/fractol julia +0.285 +0.0i                         |.
+        |   ./bin/fractol julia +0.285 +0.01i                        |.
+        |   ./bin/fractol julia +0.45 +0.1428i                       |.
+        |   ./bin/fractol julia -0.70176 -0.38421i                   |.
+        |   ./bin/fractol julia +0.285 +0.01i                        |.
+        |   ./bin/fractol julia -0.835 -0.2321i                      |.
+        |   ./bin/fractol julia -0.8 -0.156i                         |.
+        |   ./bin/fractol julia -0.7269 +0.1889i                     |.
+        |   ./bin/fractol julia +0.0 -0.8i                           |.
+        |                                                            |.
+        |   -> Third Topic (3):                                      |.
+        |      The mouse wheel zooms in and out, almost infinitely   |.
+        |    (within the limits of thecomputer).                     |.
+        |      The zoom follows the actual mouse position.           |.
+        |                                                            |.
+        |    -> Fourth Topic (4):                                    |.
+        |       The key 'c' make the color range shift.              |.
+        |                                                            |.
+        |    -> Fifth Topic (5):                                     |.
+        |       The key 'esc' will exit the program.                 |.
+        |                                                            |.
+        |                                                            |.
+        |   _________________________________________________________|___
+        |  /                                                            /.
+        \_/____________________________________________________________/.
+

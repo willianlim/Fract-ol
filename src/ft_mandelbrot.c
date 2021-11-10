@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_mandelbrot.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 20:58:32 by wrosendo          #+#    #+#             */
+/*   Updated: 2021/11/09 21:00:51 by wrosendo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/ft_fractol.h"
 
 static void	ft_map_mand(t_data *data)
 {
-	t_point *p;
+	t_point	*p;
 	double	s_x;
 	double	s_y;
 
@@ -18,15 +30,22 @@ static void	ft_map_mand(t_data *data)
 	data->point.i = 0;
 }
 
-static void		ft_check(t_data *data)
+static void	ft_check(t_data *data)
 {
 	double	tmp;
 
-	tmp = (data->complex.c_re - 0.25) * (data->complex.c_re - 0.25) + data->complex.c_img * data->complex.c_img;
-	if ((data->complex.c_re + 1.0) * (data->complex.c_re + 1.0) + data->complex.c_img * data->complex.c_img < 0.0625 \
-		|| tmp * (tmp + (data->complex.c_re - 0.25)) < 0.25 * data->complex.c_img * data->complex.c_img \
-		|| (((data->complex.c_re + 0.125) * (data->complex.c_re + 0.125)) + (data->complex.c_img - 0.744) * (data->complex.c_img - 0.744)) < 0.0088 \
-		|| (((data->complex.c_re + 0.125) * (data->complex.c_re + 0.125)) + (data->complex.c_img + 0.744) * (data->complex.c_img + 0.744)) < 0.0088)
+	tmp = (data->complex.c_re - 0.25) * (data->complex.c_re - 0.25) \
+	+ data->complex.c_img * data->complex.c_img;
+	if ((data->complex.c_re + 1.0) * (data->complex.c_re + 1.0) \
+	+ data->complex.c_img * data->complex.c_img < 0.0625 \
+		|| tmp * (tmp + (data->complex.c_re - 0.25)) < 0.25 * \
+		data->complex.c_img * data->complex.c_img \
+		|| (((data->complex.c_re + 0.125) * (data->complex.c_re + 0.125)) \
+		+ (data->complex.c_img - 0.744) * \
+		(data->complex.c_img - 0.744)) < 0.0088 \
+		|| (((data->complex.c_re + 0.125) * (data->complex.c_re + 0.125)) \
+		+ (data->complex.c_img + 0.744) * \
+		(data->complex.c_img + 0.744)) < 0.0088)
 	{
 		data->point.i = MAX_ITERATION;
 	}
@@ -35,10 +54,13 @@ static void		ft_check(t_data *data)
 void	ft_cal_loop_mand(t_data *data)
 {
 	ft_check(data);
-	while (data->point.zr2 + data->point.zi2 <= 4 && data->point.i < MAX_ITERATION)
+	while (data->point.zr2 + data->point.zi2 <= 4 \
+	&& data->point.i < MAX_ITERATION)
 	{
-		data->point.zi = 2 * data->point.zr * data->point.zi + data->complex.c_img;
-		data->point.zr = data->point.zr2 - data->point.zi2 + data->complex.c_re;
+		data->point.zi = 2 * data->point.zr * data->point.zi + \
+		data->complex.c_img;
+		data->point.zr = data->point.zr2 - data->point.zi2 + \
+		data->complex.c_re;
 		data->point.zr2 = data->point.zr * data->point.zr;
 		data->point.zi2 = data->point.zi * data->point.zi;
 		data->point.i++;
@@ -57,10 +79,11 @@ void	ft_mandelbrot(t_data *data)
 		{
 			ft_map_mand(data);
 			ft_cal_loop_mand(data);
-			rgb = (unsigned int *)&data->img.data[data->point.col * IMG_WIDTH + data->point.row];
+			rgb = (unsigned int *)&data->img.data[data->point.col * \
+			IMG_WIDTH + data->point.row];
 			*rgb = color(data);
-		data->point.col++;
+			data->point.col++;
 		}
-	data->point.row++;
+		data->point.row++;
 	}
 }

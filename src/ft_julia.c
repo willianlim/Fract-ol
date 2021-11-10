@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_julia.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 20:57:05 by wrosendo          #+#    #+#             */
+/*   Updated: 2021/11/09 20:58:16 by wrosendo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/ft_fractol.h"
 
 static void	ft_map_jul(t_data *data)
 {
-	t_point *p;
+	t_point	*p;
 	double	s_x;
 	double	s_y;
 
@@ -11,8 +23,8 @@ static void	ft_map_jul(t_data *data)
 	s_y = (double)(p->ymx - p->ymn) / WIN_HEIGHT;
 	data->point.zr = p->xmn + (double)(data->point.row * s_x);
 	data->point.zi = p->ymn + (double)(data->point.col * s_y);
-	data->complex.c_re = data->jul_r;
-	data->complex.c_img = data->jul_i;
+	data->complex.c_re = data->jul.jul_r;
+	data->complex.c_img = data->jul.jul_i;
 	data->point.zr2 = 0;
 	data->point.zi2 = 0;
 	data->point.i = 0;
@@ -20,12 +32,15 @@ static void	ft_map_jul(t_data *data)
 
 static void	ft_cal_loop_jul(t_data *data)
 {
-	while (data->point.zr2 + data->point.zi2 <= 4 && data->point.i < MAX_ITERATION)
+	while (data->point.zr2 + data->point.zi2 <= 4 && \
+	data->point.i < MAX_ITERATION)
 	{
 		data->point.zr2 = data->point.zr * data->point.zr;
 		data->point.zi2 = data->point.zi * data->point.zi;
-		data->point.zi = 2 * data->point.zr * data->point.zi + data->complex.c_img;
-		data->point.zr = data->point.zr2 - data->point.zi2 + data->complex.c_re;
+		data->point.zi = 2 * data->point.zr * data->point.zi + \
+		data->complex.c_img;
+		data->point.zr = data->point.zr2 - data->point.zi2 + \
+		data->complex.c_re;
 		data->point.i++;
 	}
 }
@@ -42,11 +57,11 @@ void	ft_julia(t_data *data)
 		{
 			ft_map_jul(data);
 			ft_cal_loop_jul(data);
-			rgb = (unsigned int *)&data->img.data[data->point.col * IMG_WIDTH + data->point.row];
+			rgb = (unsigned int *)&data->img.data[data->point.col * \
+			IMG_WIDTH + data->point.row];
 			*rgb = color(data);
-		data->point.col++;
+			data->point.col++;
 		}
-	data->point.row++;
+		data->point.row++;
 	}
 }
-

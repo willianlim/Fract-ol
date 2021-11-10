@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_mouse_hook.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/09 21:01:18 by wrosendo          #+#    #+#             */
+/*   Updated: 2021/11/09 21:05:02 by wrosendo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/ft_fractol.h"
 
 void	zoom(int key, int x, int y, t_data *data)
@@ -9,7 +21,6 @@ void	zoom(int key, int x, int y, t_data *data)
 
 	xrat = (double)x / WIN_WIDTH;
 	yrat = (double)y / WIN_HEIGHT;
-
 	d_re = data->point.xmx - data->point.xmn;
 	d_img = data->point.ymx - data->point.ymn;
 	if (key == 5)
@@ -44,15 +55,17 @@ int	ft_mouse_hook(int key, int x, int y, t_data *data)
 	{
 		zoom(key, x, y, data);
 		chek_frac(data);
-		mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, data->img.img_ptr, 0, 0);
+		mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, \
+		data->img.img_ptr, 0, 0);
 	}
 	if (key == 5)
 	{
 		zoom(key, x, y, data);
 		chek_frac(data);
-		mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, data->img.img_ptr, 0, 0);
+		mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, \
+		data->img.img_ptr, 0, 0);
 	}
-	return(0);
+	return (0);
 }
 
 void	death_star(t_data *data)
@@ -66,31 +79,11 @@ void	death_star(t_data *data)
 	exit(0);
 }
 
-static	void	define_color(t_data *data)
-{
-	data->k = (data->k + 1) % 6;
-	chek_frac(data);
-	mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, data->img.img_ptr, 0, 0);
-}
-
-// void	move_up(t_data *data)
-// {
-// 	data->point.ymn += 0.02 * (data->point.ymx - data->point.ymn);
-// 	data->point.ymx += 0.02 * (data->point.ymx - data->point.ymn);
-// 	ft_mandelbrot(data);
-// 	mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, data->img.img_ptr, 0, 0);
-// 	int i = 0;
-// 	scanf("%d", &i);
-// 	printf("%d\n", i);
-// }
-
 int	ft_key_hook(int key, t_data *data)
 {
 	if (key == 65307)
 		death_star(data);
 	if (key == 99)
 		define_color(data);
-	// if (key);
-	// 	move_up(data);
 	return (0);
 }
