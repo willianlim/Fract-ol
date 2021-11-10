@@ -24,11 +24,9 @@ $(NAME): $(OBJECTS)
 	$(MAKE) -C $(MI_PATH)
 	$(CC) $(APP)/ft_main.c -o $(NAME) $(OBJECTS) $(LIB_PATH)/$(LIBFT) \
 	$(MI_PATH)/libmlx.a -lm $(MLX_FLAGS)
-#	-fsanitize=address
-#	./bin/fractol
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@mkdir -p $(OBJDIR)
+	mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -I $(INCLUDE) -o $@
 
 bonus: all
