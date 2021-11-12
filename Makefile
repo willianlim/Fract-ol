@@ -13,7 +13,7 @@ MLX_FLAGS = -lXext -lX11
 
 SRC_FILE += ft_mandelbrot.c ft_mouse_hook.c ft_burningship.c
 SRC_FILE += ft_color.c ft_display_usage.c ft_init.c ft_julia.c
-SRC_FILE += ft_parameter_julia.c
+SRC_FILE += ft_parameter_julia.c ft_arrows.c
 OBJFILE = $(SRC_FILE:.c=.o)
 OBJECTS = $(addprefix $(OBJDIR)/, $(OBJFILE))
 
@@ -22,7 +22,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(MAKE) -C $(LIB_PATH)
 	$(MAKE) -C $(MI_PATH)
-	$(CC) $(APP)/ft_main.c -o $(NAME) $(OBJECTS) $(LIB_PATH)/$(LIBFT) \
+	$(CC) $(APP)/ft_main.c -fsanitize=address -o $(NAME) $(OBJECTS) $(LIB_PATH)/$(LIBFT) \
 	$(MI_PATH)/libmlx.a -lm $(MLX_FLAGS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c

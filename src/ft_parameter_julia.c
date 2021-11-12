@@ -6,56 +6,30 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 21:10:31 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/10 15:45:02 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/11 23:06:04 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_fractol.h"
 
-// arrumar essa função para colocar na norma
-double	stof(const char *s)
+int	point_img(int p_arg, const char **ptr, t_jul *jul, t_data *data)
 {
-	double	rez;
-	double	fact;
-	int		d;
-	int		point_seen;
-
-	rez = 0;
-	fact = 1;
-	point_seen = 0;
-	if (*s == '-')
-		verify_minus(s, &fact);
-	while (*s)
+	while ((*(*(ptr + p_arg) + jul->i) >= 48 && \
+	*(*(ptr + p_arg) + jul->i) <= 57) || \
+	*(*(ptr + p_arg) + jul->i) == 46)
 	{
-		if (*s == '.')
-			point_seen = 1;
-		d = *s++ - '0';
-		if (d >= 0 && d <= 9)
+		if (*(*(ptr + p_arg) + jul->i) == 46)
 		{
-			if (point_seen)
-				fact /= 10.0f;
-			rez = rez * 10.0f + (double)d;
-		}
-	}
-	return (rez * fact);
-}
-
-int	point_img(int a, const char **ptr, t_jul *jul, t_data *data)
-{
-	while ((*(*(ptr + a) + jul->i) >= 48 \
-	&& *(*(ptr + a) + jul->i) <= 57) || *(*(ptr + a) + jul->i) == 46)
-	{
-		if (*(*(ptr + a) + jul->i) == 46)
-		{
-			if (++jul->k >= 2)
+			if (++jul->bool_dot >= 2)
 				ft_display_usage(6, data);
 		}
-		if (!*(*(ptr + a) + ++jul->i))
+		if (!*(*(ptr + p_arg) + ++jul->i))
 			return (0);
 	}
-	if (a == 3)
+	if (p_arg == 3)
 	{
-		if (*(*(ptr + a) + jul->i) == 105 && *(*(ptr + a) + ++jul->i) == 0)
+		if (*(*(ptr + p_arg) + jul->i) == 105 && \
+		*(*(ptr + p_arg) + ++jul->i) == 0)
 			return (0);
 		else
 			ft_display_usage(7, data);
@@ -65,43 +39,40 @@ int	point_img(int a, const char **ptr, t_jul *jul, t_data *data)
 	return (0);
 }
 
-void	plus_minus_digit(int a, const char	**ptr, t_jul *jul, t_data *data)
+void	plus_minus_digit(int p_arg, const char	**ptr, t_jul *jul, t_data *data)
 {
-	while (*(*(ptr + a) + jul->i) == 43 || *(*(ptr + a) + jul->i) == 45)
+	while (*(*(ptr + p_arg) + jul->i) == 43 || *(*(ptr + p_arg) + jul->i) == 45)
 	{
-		jul->j++;
-		if (jul->j >= 2)
+		jul->bool_signal++;
+		if (jul->bool_signal >= 2)
 			ft_display_usage(3, data);
 		++jul->i;
 	}
-	if (!jul->j)
+	if (!jul->bool_signal)
 		ft_display_usage(4, data);
-	while (*(*(ptr + a) + jul->w) != 0)
+	while (*(*(ptr + p_arg) + jul->i2) != 0)
 	{
-		if (ft_isdigit(*(*(ptr + a) + jul->w++)))
+		if (ft_isdigit(*(*(ptr + p_arg) + jul->i2++)))
 		{
-			jul->l = 0;
+			jul->bool_digit = 0;
 			break ;
 		}
 	}
-	if (jul->l)
+	if (jul->bool_digit)
 		ft_display_usage(5, data);
 }
 
-// Essa função deve verificar se o valor do meu argumento tem letras, mais
-// que um ponto, caracteres especias, sinal de mais ou de menos e assim por
-// diante
-static int	verify_argv(int a, const char *argv[], t_data *data)
+static int	verify_argv(int position_argv, const char *argv[], t_data *data)
 {
 	t_jul	jul;
 
 	jul.i = 0;
-	jul.k = 0;
-	jul.j = 0;
-	jul.l = 1;
-	jul.w = 0;
-	plus_minus_digit(a, argv, &jul, data);
-	point_img(a, argv, &jul, data);
+	jul.bool_dot = 0;
+	jul.bool_signal = 0;
+	jul.bool_digit = 1;
+	jul.i2 = 0;
+	plus_minus_digit(position_argv, argv, &jul, data);
+	point_img(position_argv, argv, &jul, data);
 	return (0);
 }
 
@@ -112,14 +83,14 @@ void	ft_parameter_julia(const char *argv[], t_data *data)
 	if (!ft_strchr(argv[2], 'i'))
 	{
 		verify_argv(2, argv, data);
-		data->jul.jul_r = stof(argv[2]);
+		data->jul.jul_r = ft_atof(argv[2]);
 	}
 	else
 		ft_display_usage(9, data);
 	if (ft_strchr(argv[3], 'i'))
 	{
 		verify_argv(3, argv, data);
-		data->jul.jul_i = stof(argv[3]);
+		data->jul.jul_i = ft_atof(argv[3]);
 	}
 	else
 		ft_display_usage(10, data);

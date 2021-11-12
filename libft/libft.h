@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 11:50:46 by user              #+#    #+#             */
-/*   Updated: 2021/11/06 01:46:39 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/11 22:31:50 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -499,5 +499,7 @@ char	*ft_itoa(int n);
 int		ft_strcmp(const char *s1, const char *s2);
 
 char	*get_next_line(int fd);
+
+double	ft_atof(const char *s);
 
 #endif

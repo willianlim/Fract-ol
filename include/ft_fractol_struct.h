@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:27:14 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/10 15:48:37 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/11 23:06:56 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@
 # define IMG_HEIGHT 800
 
 # define MAX_ITERATION 600
+
+# define KEY_C 99
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_D 100
+# define KEY_S 115
+# define ESC 65307
+# define ARROW_LEFT 65361
+# define ARROW_UP 65362
+# define ARROW_RIGHT 65363
+# define ARROW_DOW 65364
 
 # define COLOR1 "./menssage/colors1.txt"
 # define ERROR1 "./menssage/error1.txt"
@@ -87,10 +98,10 @@ typedef struct s_jul
 	double		jul_r;
 	double		jul_i;
 	int			i;
-	int			k;
-	int			j;
-	int			l;
-	int			w;
+	int			bool_dot;
+	int			bool_signal;
+	int			bool_digit;
+	int			i2;
 }t_jul;
 
 typedef struct s_data

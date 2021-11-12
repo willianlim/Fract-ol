@@ -6,17 +6,11 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:48:38 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/10 02:33:12 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/11 22:31:04 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_fractol.h"
-
-void	verify_minus(const char *s, double *fact)
-{
-	s++;
-	*fact = -1;
-}
 
 unsigned int	color(t_data *data)
 {

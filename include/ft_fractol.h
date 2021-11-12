@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:40:55 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/10 15:24:03 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/11 22:39:43 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ void			chek_frac(t_data *data);
 void			define_color(t_data *data);
 void			death_star(t_data *data);
 void			verify_minus(const char *s, double *fact);
+void			positive_arrow(double *min, double *max, t_data *data);
+void			negative_arrow(double *min, double *max, t_data *data);
 
 #endif

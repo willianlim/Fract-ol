@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 21:01:18 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/09 21:05:02 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/11 23:21:48 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,25 @@ void	death_star(t_data *data)
 
 int	ft_key_hook(int key, t_data *data)
 {
-	if (key == 65307)
+	if (key == ESC)
 		death_star(data);
-	if (key == 99)
+	if (key == KEY_C)
 		define_color(data);
+	if (key == ARROW_UP)
+		negative_arrow(&data->point.ymn, &data->point.ymx, data);
+	if (key == ARROW_DOW)
+		positive_arrow(&data->point.ymn, &data->point.ymx, data);
+	if (key == ARROW_LEFT)
+		negative_arrow(&data->point.xmn, &data->point.xmx, data);
+	if (key == ARROW_RIGHT)
+		positive_arrow(&data->point.xmn, &data->point.xmx, data);
+	if (key == KEY_W)
+		negative_arrow(&data->point.ymn, &data->point.ymx, data);
+	if (key == KEY_S)
+		positive_arrow(&data->point.ymn, &data->point.ymx, data);
+	if (key == KEY_A)
+		negative_arrow(&data->point.xmn, &data->point.xmx, data);
+	if (key == KEY_D)
+		positive_arrow(&data->point.xmn, &data->point.xmx, data);
 	return (0);
 }
