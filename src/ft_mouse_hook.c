@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 21:01:18 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/12 02:46:30 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/12 15:47:30 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,17 +79,6 @@ void	death_star(t_data *data)
 	exit(0);
 }
 
-int	mouse_handler(int x, int y, t_data *data)
-{
-	data->jul.jul_r = (float)(x - IMG_WIDTH / 2) *4 / IMG_WIDTH;
-	data->jul.jul_i = (float)(y - IMG_HEIGHT / 2) *4 / IMG_WIDTH;
-	ft_julia(data);
-	mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win, \
-		data->img.img_ptr, 0, 0);
-	return (0);
-}
-
-// falta ver essa função não esqueça
 int	ft_key_hook(int key, t_data *data)
 {
 	if (key == ESC)

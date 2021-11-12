@@ -1,6 +1,6 @@
 NAME = fractol
 CC = clang
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -O3
 APP = ./apps
 LIB_PATH = ./libft
 LIBFT = libft.a
