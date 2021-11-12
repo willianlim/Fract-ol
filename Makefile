@@ -22,7 +22,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(MAKE) -C $(LIB_PATH)
 	$(MAKE) -C $(MI_PATH)
-	$(CC) $(APP)/ft_main.c -fsanitize=address -o $(NAME) $(OBJECTS) $(LIB_PATH)/$(LIBFT) \
+	$(CC) $(APP)/ft_main.c -o $(NAME) $(OBJECTS) $(LIB_PATH)/$(LIBFT) \
 	$(MI_PATH)/libmlx.a -lm $(MLX_FLAGS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c

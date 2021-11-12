@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 21:20:47 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/10 15:25:08 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/12 02:43:38 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, const char *argv[])
 	data.mlx->win, data.img.img_ptr, 0, 0);
 	mlx_mouse_hook(data.mlx->win, ft_mouse_hook, &data);
 	mlx_key_hook(data.mlx->win, ft_key_hook, &data);
+	mlx_hook(data.mlx->win, 6, (1L << 6), mouse_handler, &data);
 	mlx_loop(data.mlx->mlx_ptr);
 	return (0);
 }

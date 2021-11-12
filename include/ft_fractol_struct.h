@@ -6,7 +6,7 @@
 /*   By: wrosendo <wrosendo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 22:27:14 by wrosendo          #+#    #+#             */
-/*   Updated: 2021/11/11 23:06:56 by wrosendo         ###   ########.fr       */
+/*   Updated: 2021/11/12 02:25:51 by wrosendo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define IMG_WIDTH 800
 # define IMG_HEIGHT 800
 
-# define MAX_ITERATION 600
+# define MAX_ITERATION 80
 
 # define KEY_C 99
 # define KEY_W 119
