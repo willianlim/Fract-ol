@@ -25,6 +25,8 @@
 8. [Operations in Trigonometric Form](#Operations-in-Trigonometric-Form)
 
 
+<p align=center><img src="images/equationmandelbrot.gif"></p>
+
 # Complex Number Set
 
 ## Definition1
