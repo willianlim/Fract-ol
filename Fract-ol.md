@@ -1,5 +1,5 @@
 <h1 align=center>
-	<b>Complex Number Set</b>
+	<b>Fract-ol</b>
 </h1>
 
 ## Table of Contents
