@@ -1,11 +1,11 @@
-# [`GNL`](https://github.com/willianlim/get_next_line/blob/main/pdf/en.subject.pdf)
+# [`fract-ol`](https://github.com/willianlim/get_next_line/blob/main/pdf/en.subject.pdf)
 
 Function should let you read the text file pointed to by the file descriptor, one line at a time.
 
 ## 📥 Installation
 
 ```bash
-git clone https://github.com/willianlim/get_next_line
+git clone git@github.com:willianlim/fract-ol.git
 ```
 
 ## ✍ Usage
