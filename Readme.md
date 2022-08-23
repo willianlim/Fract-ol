@@ -1,50 +1,60 @@
-<h1 align=center>
-	<b>Fract-ol</b>
-</h1>
+# [`GNL`](https://github.com/willianlim/get_next_line/blob/main/pdf/en.subject.pdf)
 
-## Table of Contents
+Function should let you read the text file pointed to by the file descriptor, one line at a time.
 
-1. [Complex Number Set](#complex-number-set)
-	- [Definition1](#Definition1)
-	- [Imaginary Unit](#Imaginary-Unit)
-	- [i Powers](#i-Powers)
-2. [Algebraic Form of z](#Algebraic-Form-of-z)
-3. [Complex Number Conjugate](#Complex-Number-Conjugate)
-	- [Definition2](#Definition2)
-	- [Geometric Interpretation of the Conjugate](#Geometric-Interpretation-of-the-Conjugate)
-4. [Quotient of two complex numbers in algebraic form](#Quotient-of-two-complex-numbers-in-algebraic-form)
-5. [Module](#Module)
-	- [Step 1: Setting Up a Strong Password Policy](#step-1-setting-up-a-strong-password-policy)
-	   - [Password Age](#password-age)
-6. [Argument](#Argument)
-	- [Definition3](#Definition3)
-7. [Trigonometric or Polar Form](#Trigonometric-or-Polar-Form)
-	- [Installation](#1-installation)
-	- [Linux Lighttpd MariaDB PHP *(LLMP)* Stack](#2-linux-lighttpd-mariadb-php-llmp-stack)
-	   - [Step 1: Installing Lighttpd](#step-1-installing-lighttpd)
-8. [Operations in Trigonometric Form](#Operations-in-Trigonometric-Form)
+## 📥 Installation
+
+```bash
+git clone https://github.com/willianlim/get_next_line
+```
+
+## ✍ Usage
+
+```python
+import foobar
+
+# returns 'words'
+foobar.pluralize('word')
+
+# returns 'geese'
+foobar.pluralize('goose')
+
+# returns 'phenomenon'
+foobar.singularize('phenomena')
+```
+
+```C
+/*
+	Example of main file for teste
+*/
+
+#include <stdio.h>
+#include <fcntl.h>
+#include "get_next_line.h"
+
+int main(void)
+{
+	int		fd;
+	char	*line;
+
+	fd = open("file_teste.txt", O_RDONLY);
+	while(1)
+	{
+		line = get_next_line(fd);
+		if (!line)
+			break ;
+		printf("%s", line);
+		free(line);
+	}
+	return (0);
+}
+```
 
 
-<p align=center><img src="images/equationmandelbrot.gif"></p>
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-# Complex Number Set
+Please make sure to update tests as appropriate.
 
-## Definition1
-
-
-
-
-![VM](https://thinkzone.wlonk.com/Numbers/ComplexSet_w600.png)
-
-
-## Reference
-
-[Complex Numbers - Vídeo Lessons(Paulo Pereira)](https://www.youtube.com/watch?v=7E7mypyLyoM&list=PLEfwqyY2ox853NZdP0oJNXlnjmHOgDSFK&index=1)
-
-[Complex Number Set Diagram](https://thinkzone.wlonk.com/Numbers/NumberSets.htm)
-
-[Mathematics in R Markdown](#https://rpruim.github.io/s341/S19/from-class/MathinRmd.html)
-
-[Easiest way of writing mathematical equation in R Markdown](#https://www.youtube.com/watch?v=4I3PCDME5U8)
-
-[fract notion](#https://bejewled-quilt-b26.notion.site/Fractol-880fd85a81364edd88a75ffa7726b84f)
+## 📝 License
+- Licença de software [`LICENSE`](https://github.com/willianlim/get_next_line/blob/main/LICENSE)
